@@ -1,8 +1,42 @@
-@page "/woodcutting"
+@using BlazorApp.Game.Skills
 @using Colombus.Game
-@inject GameState.game
+@inject GameState GameState
+@inject WoodCuttingSkill WoodCutting
 
 <h3>Woodcutting</h3>
 
-<p>Level: @GameState.Player.WoodCuttingLvl</p>
+<p>Logs: @GameState.Player.Logs</p>
 <p>XP: @GameState.Player.WoodcuttingXP</p>
+
+@if (!GameState.IsBusy)
+{
+    <button @onclick="Start">Start Woodcutting</button>
+}
+else
+{
+    <button @onclick="Stop">Stop</button>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        GameState.OnChange += StateHasChanged;
+    }
+
+    void Start()
+    {
+        GameState.StartWoodcutting();
+        Woodcutting.Start();
+    }
+
+    void Stop()
+    {
+        GameState.StopWoodcutting();
+        Woodcutting.Stop();
+    }
+
+    public void Dispose()
+    {
+        GameState.OnChange -= StateHasChanged;
+    }
+}
