@@ -6,7 +6,7 @@ using BlazorApp.Game.Skills;
 public class GameState
 {
     public PlayerState Player {get;} = new ();
-    /*public bool IsBusy{get;set;}*/
+    public bool IsBusy{get;set;}
     public ISkill? ActiveSkill{get;private set;}
 
     public event Action? OnChange;

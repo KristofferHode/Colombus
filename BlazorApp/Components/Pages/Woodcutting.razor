@@ -25,14 +25,14 @@ else
 
     void Start()
     {
-        GameState.StartWoodcutting();
-        Woodcutting.Start();
+        GameState.Woodcutting();
+        WoodCuttingSkill.Start();
     }
 
     void Stop()
     {
         GameState.StopWoodcutting();
-        Woodcutting.Stop();
+        WoodCuttingSkill.Stop();
     }
 
     public void Dispose()

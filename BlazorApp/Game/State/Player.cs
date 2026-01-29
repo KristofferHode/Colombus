@@ -13,6 +13,6 @@ public class PlayerState
     public int Logs{get;set;}
 
     public Dictionary<string, ISkill> Skills{get;}=new();
-    public T GetSkill<t>() where t:ISkill
+    public T GetSkill<T>() where T:ISkill
     =>(T)Skills.Values.First(s=>s is T);
 }
