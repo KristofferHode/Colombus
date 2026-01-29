@@ -7,4 +7,11 @@
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Game\Data\" />
+    <Folder Include="Game\Skills\" />
+    <Folder Include="Game\Systems\" />
+    <Folder Include="Game\Utils\" />
+  </ItemGroup>
+
 </Project>
